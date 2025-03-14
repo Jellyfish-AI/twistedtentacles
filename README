@@ -1,0 +1,29 @@
+# WELCOME TO THE JELLYFISH FORWARD DEPLOYED ENGINEERING INTERVIEW
+
+# The following is a breakdown of the relevant files/folders
+
+    Folder: company_files -> a collections of files that associate 1:1 with companies. 
+        *  These files are used to apply client specific transformations/changes to the data.
+        *  They are named using the 'slug' property on the Company object
+
+    Folder: helper_functions -> a collection of GET functions designed to assist in the fetching of specific data
+
+    Folder: models -> contains the models.py file which contains the definitions of all the relevant data classes being used
+
+    Folder: process_data: -> contains functions for processing and displaying the most recent order information 
+
+    Folder: stored_data -> contains the latest order forms as well as the "db" data.py
+
+    
+    File: utils -> contains helper functions for importing and using @company_specific_function tags
+
+    File: main.py -> processes, transforms and prints a receipt for the most recent order form
+    
+
+# These assumptions can be made 
+
+    1. All of the existing functions work as intended (unless otherwise noted)
+    2. The data in stored_data will not change and will remain the same throughout each test
+    3. All company specific processing will happen in the respective company .py file
+    4. Company .py files are named with the same slug as the company object
+    5. A Company "slug" is a unique string identifier used to represent a company
