@@ -1,6 +1,6 @@
 # Import json from stored_data.json and process the orders
 
-from process_data.process_orders import process_order_form, print_order_receipts
+from process_data.process_orders import print_order_receipts_by_company, process_order_form
 from stored_data.data import companies
 from process_data.tests import validate_orders
 from utils import import_all_modules_from_directory, run_company_specific_functions
@@ -16,8 +16,8 @@ def process_and_print_orders():
 
     validate_orders(orders)
 
-    # Return a list of order items
-    print_order_receipts(companies, orders)
+    # Return a list of order items by company
+    print_order_receipts_by_company(companies, orders)
 
 # Run it all
 if __name__ == '__main__':

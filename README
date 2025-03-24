@@ -27,3 +27,6 @@
     3. All company specific processing will happen in the respective company .py file
     4. Company .py files are named with the same slug as the company object
     5. A Company "slug" is a unique string identifier used to represent a company
+
+
+# TO TEST RESULTS PLEASE RUN THE CODE IN main.py

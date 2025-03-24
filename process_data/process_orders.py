@@ -33,7 +33,7 @@ def process_order_form(companies):
     return orders
 
 
-def print_order_receipts(companies, orders):
+def print_order_receipts_by_company(companies, orders):
 
     '''
     Print out each companies reciept information
