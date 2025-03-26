@@ -27,17 +27,17 @@ class Company:
     contact: User
 
 @dataclass
-class OrderItem:
+class OrderItems:
     product: Product
     quantity: int
-    discount: float = 0.0
-    item_price: float = 0.0
+    item_discount: float = 0.0
+    total_item_price: float = 0.0
 
 @dataclass
 class Order:
     id: int
     company: Company
-    items: List[OrderItem]
-    total_price: float
+    items: List[OrderItems]
+    total_order_price: float
     order_date: datetime
     validated: bool = False

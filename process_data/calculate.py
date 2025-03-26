@@ -1,6 +1,6 @@
-def calculate_total_price(items):
-        total_price = 0
-        for item in items:
-            total_price += item.item_price
+def calculate_total_order_price(items_list):
+        total_order_price = 0
+        for items in items_list:
+            total_order_price += items.total_item_price
 
-        return total_price
+        return total_order_price

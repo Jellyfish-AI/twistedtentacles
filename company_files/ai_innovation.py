@@ -10,9 +10,9 @@ def apply_ai_innovation_discount(orders):
     ai_innovation_orders = get_orders_for_company(orders, 'ai_innovation')
     for order in ai_innovation_orders:
         for item in order.items:
-            item.discount = 0.25
-            item.item_price *= (1 - item.discount)
-            order.total_price = sum([item.item_price for item in order.items])
+            item.item_discount = 0.25
+            item.total_item_price *= (1 - item.item_discount)
+        order.total_order_price = sum([item.total_item_price for item in order.items])
     return orders
 
 @company_specific_function('ai_innovation')
@@ -23,6 +23,6 @@ def apply_usd_to_eur_conversion(orders):
     ai_innovation_orders = get_orders_for_company(orders, 'ai_innovation')
     for order in ai_innovation_orders:
         for item in order.items:
-            item.item_price *= 0.85
-        order.total_price = sum([item.item_price for item in order.items])
+            item.total_item_price *= 0.85
+        order.total_order_price = sum([item.total_item_price for item in order.items])
     return orders

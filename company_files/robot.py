@@ -12,6 +12,6 @@ def apply_robot_discount(orders):
     robot_orders = get_orders_for_company(orders, 'robot')
     order_discount = 0.5
     for order in robot_orders:
-        order.total_price *= 1 - order_discount
+        order.total_order_price *= 1 - order_discount
 
     return orders

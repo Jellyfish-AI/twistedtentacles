@@ -1,9 +1,9 @@
 import json
 from datetime import datetime
 
-from helper_functions.helper_functions import get_order_items_for_company, get_orders_for_company
-from models.models import Order, OrderItem
-from process_data.calculate import calculate_total_price
+from helper_functions.helper_functions import get_orders_for_company
+from models.models import Order, OrderItems
+from process_data.calculate import calculate_total_order_price
 from stored_data.data import products
 
 def process_order_form(companies):
@@ -22,13 +22,13 @@ def process_order_form(companies):
         for item_data in order_data['items']:
             product = products[item_data['product_id']]
             quantity = item_data['quantity']
-            item_price = product.price * quantity
-            items.append(OrderItem(product=product, quantity=quantity, item_price=item_price))
+            total_item_price = product.price * quantity
+            items.append(OrderItems(product=product, quantity=quantity, total_item_price=total_item_price))
        
         order_date = datetime.strptime(order_data['order_date'], '%Y-%m-%dT%H:%M:%S')
-        total_price = calculate_total_price(items)
+        total_order_price = calculate_total_order_price(items)
         
-        orders.append(Order(order_id, company, items, total_price, order_date))
+        orders.append(Order(order_id, company, items, total_order_price, order_date))
     
     return orders
 
@@ -36,7 +36,7 @@ def process_order_form(companies):
 def print_order_receipts_by_company(companies, orders):
 
     '''
-    Print out each companies reciept information
+    Print out each companies receipt information
     ''' 
 
     all_companies = companies.values()    
@@ -49,7 +49,7 @@ def print_order_receipts_by_company(companies, orders):
                 'company': company.name,
                 'order_id': order.id,
                 'item_inventory': order.items,
-                'amount_due': order.total_price,
+                'amount_due': order.total_order_price,
                 'address': company.address,
                 'validated': order.validated,
                 'order_date': order.order_date,
@@ -57,7 +57,7 @@ def print_order_receipts_by_company(companies, orders):
 
             print(f"Company: {receipt_info['company']}")
             print(f"Order #: {receipt_info['order_id']}")
-            print (f"Date: {receipt_info['order_date']}")
+            print(f"Date: {receipt_info['order_date']}")
             print(f"Items: {receipt_info['item_inventory']}")
             print(f"Amount Due: {receipt_info['amount_due']}")
             print(f"Address: {receipt_info['address']}")
