@@ -2,6 +2,8 @@
 
 # Note: Feel free to create or remove any files as you see fit 
 
+# Note: TO TEST RESULTS PLEASE RUN THE CODE IN main.py
+
 # The following is a breakdown of the relevant files/folders
 
     Folder: company_files -> a collections of files that associate 1:1 with companies. 
@@ -16,7 +18,6 @@
 
     Folder: stored_data -> contains the latest order forms as well as the "db" data.py
 
-    
     File: utils -> contains helper functions for importing and using @company_specific_function tags
 
     File: main.py -> processes, transforms and prints a receipt for the most recent order form
@@ -29,6 +30,3 @@
     3. All company specific processing will happen in the respective company .py file
     4. Company .py files are named with the same slug as the company object
     5. A Company "slug" is a unique string identifier used to represent a company
-
-
-# TO TEST RESULTS PLEASE RUN THE CODE IN main.py
