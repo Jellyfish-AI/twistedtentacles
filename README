@@ -4,6 +4,14 @@
 
 # Note: TO TEST RESULTS PLEASE RUN THE CODE IN main.py
 
+# These assumptions can be made 
+
+    1. All of the existing functions work as intended
+    2. The data in stored_data will not change and will remain the same throughout each test
+    3. All company specific processing will happen in the respective company .py file
+    4. Company .py files are named with the same slug as the company object
+    5. A Company "slug" is a unique string identifier used to represent a company
+
 # The following is a breakdown of the relevant files/folders
 
     Folder: company_files -> a collections of files that associate 1:1 with companies. 
@@ -18,15 +26,8 @@
 
     Folder: stored_data -> contains the latest order forms as well as the "db" data.py
 
-    File: utils -> contains helper functions for importing and using @company_specific_function tags
-
     File: main.py -> processes, transforms and prints a receipt for the most recent order form
+
+    File: utils -> contains helper functions for importing and using @company_specific_function tags (can be ignored)
     
 
-# These assumptions can be made 
-
-    1. All of the existing functions work as intended (unless otherwise noted)
-    2. The data in stored_data will not change and will remain the same throughout each test
-    3. All company specific processing will happen in the respective company .py file
-    4. Company .py files are named with the same slug as the company object
-    5. A Company "slug" is a unique string identifier used to represent a company
